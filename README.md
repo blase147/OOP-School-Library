@@ -11,7 +11,7 @@
 
 ## 📖 OOP-School-Library<a name="about-project"></a>
 
-In this project, I achieved the following
+In this project, I achieved the following;
 
 - Created a class Classroom with @label instance variable, should be initialized in the constructor.
 - Updated Class Student.
