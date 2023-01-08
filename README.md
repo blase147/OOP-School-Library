@@ -13,11 +13,12 @@
 
 In this project, I achieved the following;
 
-- Created a class Classroom with @label instance variable, should be initialized in the constructor.
-- Updated Class Student.
-- Created a class Book with the @title and @author instance variables, should be initialized in the constructor.
-- Created a class Rental with the @date instance variable, should be initialized in the constructor.
-- Updated Person Class.
+- Created a main.rb file that will serve as my console app entry-point.
+- List all books and people.
+- Created a book and a rental.
+- Created a person(teacher or student)
+- List all rentals for a given person id.
+- Defined an entry point using the main method that is invoked at the end of the file.
 
 ## 🛠 Built With <a name="built-with"></a>
 
