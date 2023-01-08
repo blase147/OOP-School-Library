@@ -13,9 +13,11 @@
 
 In this project, I achieved the following
 
-- Created a class Corrector with a method correct_name.
-- Set an instance of Corrector in Person on initialization.
-- In Person, added a method validate_name that uses the Corrector instance to validate and save the corrected name(after trimming name).
+- Created a class Classroom with @label instance variable, should be initialized in the constructor.
+- Updated Class Student.
+- Created a class Book with the @title and @author instance variables, should be initialized in the constructor.
+- Created a class Rental with the @date instance variable, should be initialized in the constructor.
+- Updated Person Class.
 
 ## 🛠 Built With <a name="built-with"></a>
 
