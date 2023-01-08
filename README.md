@@ -13,9 +13,10 @@
 
 In this project, I achieved the following
 
-Created Class Person
-Created Class Student
-Created Class Teacher
+- Created Class Person
+- Created Class Student
+- Created Class Teacher
+
 ## 🛠 Built With <a name="built-with"></a>
 
 - **Ruby**
