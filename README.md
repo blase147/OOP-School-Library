@@ -32,7 +32,9 @@ In this project, I achieved the following;
 ## 🛠 Built With <a name="built-with"></a>
 
 - **Ruby**
+
 ### Tech Stack <a name="tech-stack"></a>
+
 <details>
   <summary>Client</summary>
   <ul>
