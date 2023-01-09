@@ -11,17 +11,15 @@
   - [Install](#install)
   - [Usage](#usage)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
+- [❓ FAQ (OPTIONAL)](#faq)
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 ## 📖 OOP-School-Library<a name="about-project"></a>
 
-In this project, I achieved the following
-
-- Created Class Person
-- Created Class Student
-- Created Class Teacher
+This APP will allow you to: Add new students or teachers. Add new books. Save records of who borrowed a given book and when. And all of this is done in a beautiful and well-organized way!
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -51,7 +49,7 @@ In this project, I achieved the following
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://github.com/blase147/OOP-School-Library.io)
+- [Coming soon...](https://github.com/blase147/OOP-School-Library.io)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
