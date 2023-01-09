@@ -23,7 +23,6 @@ This APP will allow you to: Add new students or teachers. Add new books. Save re
 
 ## 🛠 Built With <a name="built-with"></a>
 
-- **Ruby**
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
@@ -45,8 +44,6 @@ This APP will allow you to: Add new students or teachers. Add new books. Save re
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
 
 - [Coming soon...](https://github.com/blase147/OOP-School-Library.io)
 
@@ -74,11 +71,6 @@ open the command prompt in this directory.
 - write git clone <https://github.com/blase147/OOP-School-Library.git>
 - or git clone git@github.com/blase147/OOP-School-Library.git` if you prefer ssh and hit enter.
 - create a directory in your preferred location (e.g in the Desktop or Document directory)
-
-
-
-### Install
-
 
 ### Install
 
@@ -128,13 +120,22 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 ## ⭐️ Show your support <a name="support"></a>
 
 If you like this project 😄, a star would be a nice gift from you :astronaut:
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 A big thanks to the [Microverse Team](https://www.microverse.org)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## 📝 License <a name="license"></a>
 
