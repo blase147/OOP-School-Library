@@ -10,10 +10,7 @@
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -93,17 +90,6 @@ Go to the repository folder in your command prompt.
 
 [GitHub](https://github.com/blase147) | [Twitter](https://twitter.com/ChukwumaMosanya) | [LinkedIn](https://www.linkedin.com/in/chukwuma-mosanya)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **Create a digital store that allows borrowing books from any part of the world**
-- [ ] **Turn it into an API**
-- [ ] **Create a featre for downloading books on demand**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
