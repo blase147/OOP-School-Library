@@ -11,8 +11,10 @@
   - [Install](#install)
   - [Usage](#usage)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
+- [❓ FAQ (OPTIONAL)](#faq)
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 ## 📖 OOP-School-Library<a name="about-project"></a>
