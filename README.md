@@ -25,16 +25,15 @@ This APP will allow you to: Add new students or teachers. Add new books. Save re
 
 - **Ruby**
 ### Tech Stack <a name="tech-stack"></a>
+
 <details>
-  <summary>Client</summary>
+<summary>Backend</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li><a href="https://www.ruby.org/">Ruby</a></li>
   </ul>
 </details>
 
 ### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
 
 - **Add new students or teachers**
 - **Add new books**
@@ -66,19 +65,43 @@ To get a local copy up and running follow these simple example steps.
 
 In order to run this project you need:
 
-- install Ruby
-- gem install rails
+- A Desktop or Laptop Computer running on with Windows, Mac OS or Linux operating system.
+- Ruby installed on the Computer
 
 ### Setup
 
 open the command prompt in this directory.
 - write git clone <https://github.com/blase147/OOP-School-Library.git>
+- or git clone git@github.com/blase147/OOP-School-Library.git` if you prefer ssh and hit enter.
+- create a directory in your preferred location (e.g in the Desktop or Document directory)
+
 
 
 ### Install
 
-Go to the repository folder in your command prompt.
-- run bundle install.
+
+### Install
+
+Install this project with:
+
+- Dependencies _(a packet manager is required)_: then you run the command `npm install` in the terminal
+
+### Usage
+
+To run the project, execute the following command:
+
+- `ruby -the name of the file-`
+- This will run the project in the terminal in the specified directory
+
+### Run tests
+
+To run tests, run the following command:
+
+- `npm run test`
+- This will run all tests on your local machine
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
