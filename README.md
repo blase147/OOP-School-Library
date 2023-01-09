@@ -47,7 +47,7 @@ This APP will allow you to: Add new students or teachers. Add new books. Save re
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](https://github.com/blase147/OOP-School-Library.io)
+- [Coming soon...](https://github.com/blase147/OOP-School-Library.io)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
