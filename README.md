@@ -19,8 +19,8 @@
 
 In this project, I achieved the following
 
-- Created a class Corrector with a method correct_name.
-- Set an instance of Corrector in Person on initialization.
+- Created a class Nameable with a method correct_name.
+- Set an instance of Nameable in Person on initialization.
 - In Person, added a method validate_name that uses the Corrector instance to validate and save the corrected name(after trimming name).
 
 ## 🛠 Built With <a name="built-with"></a>
