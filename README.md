@@ -103,6 +103,15 @@ To run tests, run the following command:
 
 [GitHub](https://github.com/blase147) | [Twitter](https://twitter.com/ChukwumaMosanya) | [LinkedIn](https://www.linkedin.com/in/chukwuma-mosanya)
 
+👤 *Olaoye Abayomi*
+
+[@GitHub](https://github.com/AbayomiOlaoye) | [@Twitter](https://twitter.com/olaoyeelijah) | [LinkedIn](https://linkedin.com/in/oluwatoyinolaoye)
+
+👤 **Sammuel LEKPOR**
+
+- GitHub: [@githubhandle](https://github.com/Samuellekpor)
+- Twitter: [@twitterhandle](https://twitter.com/samuel_lekpor)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/sammuel-lekpor)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
