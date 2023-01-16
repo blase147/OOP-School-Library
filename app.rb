@@ -42,6 +42,7 @@ class App
     age = gets.chomp.to_i
     puts 'Name: '
     name = gets.chomp
+
     case person_to_add
     when 1
       puts 'Do you have parent Permission? [Y/N]: '
@@ -50,14 +51,16 @@ class App
       user_permission = false if user_response == 'N'
       people = Student.new(nil, age, name, parent_permission: user_permission)
       student_data_hash = { id: people.id, name: people.name, age: people.age, class: 'student' }
-      student_data = get_data('people').push(student_data_hash)
+      student_data = get_data('people')
+      student_data.push(student_data_hash)
       update_data('people', student_data)
     when 2
       puts 'Specialisation: '
       specialisation = gets.chomp
       people = Teacher.new(specialisation, age, name)
       teacher_data_hash = { id: people.id, name: people.name, age: people.age, class: 'teacher' }
-      teach_data = get_data('people').push(teacher_data_hash)
+      teach_data = get_data('people')
+      teach_data.push(teacher_data_hash)
       update_data('people', teach_data)
     end
     puts 'Person added successfully'
@@ -123,7 +126,8 @@ class App
   end
 
   def options
-    loop do display_all
+    loop do
+      display_all
       option = gets.chomp.to_i
       case option
       when 1
