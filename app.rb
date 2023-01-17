@@ -139,7 +139,7 @@ class App
   end
 
   def options
-    option = gets.chomp.to_i
+      option = gets.chomp.to_i
       case option
       when 1
         list_books
