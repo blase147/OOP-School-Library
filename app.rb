@@ -139,24 +139,24 @@ class App
   end
 
   def options
-      option = gets.chomp.to_i
-      case option
-        when 1
-          list_books
-          show_books
-        when 2
-          list_people
-          show_people
-        when 3
-          add_people
-        when 4
-          add_rental
-        when 5
-          add_book
-        when 6
-          show_rental
-        when 7
-          exit_app
-      end
+    option = gets.chomp.to_i
+    case option
+    when 1
+      list_books
+      show_books
+    when 2
+      list_people
+      show_people
+    when 3
+      add_people
+    when 4
+      add_rental
+    when 5
+      add_book
+    when 6
+      show_rental
+    when 7
+      exit_app
+    end
   end
 end
