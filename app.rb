@@ -35,6 +35,21 @@ class App
     end
   end
 
+  def handle_data(data, people)
+    case people
+    when 'student'
+      student_data_hash = { id: data.id, name: data.name, age: data.age, class: 'student' }
+      student_data = get_data('people')
+      student_data.push(student_data_hash)
+      update_data('people', student_data)
+    when 'teacher'
+      teacher_data_hash = { id: data.id, name: data.name, age: data.age, class: 'teacher' }
+      teach_data = get_data('people')
+      teach_data.push(teacher_data_hash)
+      update_data('people', teach_data)
+    end
+  end
+
   def add_people
     print('press 1 to add a student or press 2 to add a teacher')
     person_to_add = gets.chomp.to_i
@@ -47,21 +62,14 @@ class App
     when 1
       puts 'Do you have parent Permission? [Y/N]: '
       user_response = gets.chomp.capitalize
-      user_permission = true if user_response == 'Y'
-      user_permission = false if user_response == 'N'
-      people = Student.new(nil, age, name, parent_permission: user_permission)
-      student_data_hash = { id: people.id, name: people.name, age: people.age, class: 'student' }
-      student_data = get_data('people')
-      student_data.push(student_data_hash)
-      update_data('people', student_data)
+      user_permission = user_response == 'Y'
+      people_data = Student.new(nil, age, name, parent_permission: user_permission)
+      handle_data(people_data, 'student')
     when 2
       puts 'Specialisation: '
       specialisation = gets.chomp
-      people = Teacher.new(specialisation, age, name)
-      teacher_data_hash = { id: people.id, name: people.name, age: people.age, class: 'teacher' }
-      teach_data = get_data('people')
-      teach_data.push(teacher_data_hash)
-      update_data('people', teach_data)
+      people_data = Teacher.new(specialisation, age, name)
+      handle_data(people_data, 'teacher')
     end
     puts 'Person added successfully'
   end
@@ -117,12 +125,12 @@ class App
     puts 'Welcome to the school library'
     puts ' Please choose a task  basing on the number '
     puts "1:  Show all books.
-            2:  Show all people.
-            3: Create a person
-            4: Create a rental
-            5: Create a book
-            6: List rented books to a person by ID
-            7: Exit"
+          2:  Show all people.
+          3: Create a person
+          4: Create a rental
+          5: Create a book
+          6: List rented books to a person by ID
+          7: Exit"
   end
 
   def options

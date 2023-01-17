@@ -10,5 +10,29 @@
     "name" : "steve",
     "age" : 12,
     "class" : "student"
+  },
+  {
+    "id" : 600,
+    "name" : "Sam",
+    "age" : 21,
+    "class" : "student"
+  },
+  {
+    "id" : 624,
+    "name" : "Alfred",
+    "age" : 21,
+    "class" : "student"
+  },
+  {
+    "id" : 615,
+    "name" : "neem",
+    "age" : 58,
+    "class" : "teacher"
+  },
+  {
+    "id" : 732,
+    "name" : "marcel",
+    "age" : 13,
+    "class" : "student"
   }
 ]
