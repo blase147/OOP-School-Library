@@ -133,9 +133,12 @@ class App
           7: Exit"
   end
 
+  def exit_app
+    puts 'I am glad you that you enjoyed the app! Now exiting...'
+    exit
+  end
+
   def options
-    loop do
-      display_all
       option = gets.chomp.to_i
       case option
       when 1
@@ -152,9 +155,8 @@ class App
         add_book
       when 6
         show_rental
-      else
-        break
+      when 7
+        exit_app
       end
-    end
   end
 end

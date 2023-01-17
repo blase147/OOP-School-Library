@@ -2,7 +2,10 @@ require './app'
 class Main
   def main
     app = App.new
-    app.options
+    loop do
+      app.display_all
+      app.options
+    end
   end
 end
 
