@@ -155,7 +155,7 @@ class App
         add_book
       when 6
         show_rental
-      when 7
+      else
         exit_app
       end
   end
