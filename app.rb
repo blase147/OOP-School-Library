@@ -1,152 +1,145 @@
+require './person'
+require './book'
 require './rental'
 require './student'
-require './book'
 require './teacher'
-require './save_data'
+require 'colorize'
+require './data_saver'
+require 'json'
 
 class App
-  attr_reader :book, :person, :rental
-
   include DataSaver
-
   def initialize
-    @book = show_books
-    @person = show_people
-    @rental = show_rentals(@book, @person)
+    @rentals = load_rentals
+    @books = load_books
+    @persons = load_people
   end
 
-  def list_books
-    if @book.empty?
-      puts 'No books found in library'
+  def menu
+    puts 'Welcome to my app'
+    puts 'choose an option by entering a number: '
+    puts '1) List all books'
+    puts '2) List all people'
+    puts '3) Create a person'
+    puts '4) Create a book'
+    puts '5) Create a rental'
+    puts '6) List all rentals for a given person id'
+    puts '7) Exit'
+  end
+
+  def list_all_books
+    @books = load_books
+    if @books.empty?
+      puts 'There are no books listed, please enter a book name and author'.red
     else
-      book.each do |item|
-        puts "title: #{item.title}, Author: #{item.author}"
+      @books.each_with_index do |book, index|
+        puts "(#{index}) Title: #{book['title']} || Author: #{book['author']}".cyan
       end
     end
   end
 
-  def list_people
-    if @person.empty?
-      puts 'No person found'
+  def list_all_persons
+    @persons = load_people
+    if @persons.empty?
+      puts 'There are no persons listed'.red
     else
-      person.each do |item|
-        puts "Name: #{item.name}, Age: #{item.age},ID: #{item.id}"
+      @persons.each_with_index do |person, index|
+        puts "#{index}) Name: #{person['name']}, ID: #{person['id'][0]} Age: #{person['age']}".cyan
       end
     end
   end
 
-  def add_people
-    print('press 1 to add a student or press 2 to add a teacher')
-    person_to_add = gets.chomp.to_i
-    puts 'Age: '
-    age = gets.chomp.to_i
-    puts 'Name: '
-    name = gets.chomp
-
-    case person_to_add
-    when 1
-      puts 'Do you have parent Permission? [Y/N]: '
-      user_response = gets.chomp.capitalize
-      user_permission = true if user_response == 'Y'
-      user_permission = false if user_response == 'N'
-      people = Student.new(nil, age, name, parent_permission: user_permission)
-      student_data_hash = { id: people.id, name: people.name, age: people.age, class: 'student' }
-      student_data = get_data('people')
-      student_data.push(student_data_hash)
-      update_data('people', student_data)
-    when 2
-      puts 'Specialisation: '
-      specialisation = gets.chomp
-      people = Teacher.new(specialisation, age, name)
-      teacher_data_hash = { id: people.id, name: people.name, age: people.age, class: 'teacher' }
-      teach_data = get_data('people')
-      teach_data.push(teacher_data_hash)
-      update_data('people', teach_data)
+  def create_person
+    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+    creation = gets.chomp
+    case creation
+    when '1'
+      print 'Age: '.yellow
+      stu_age = gets.chomp.to_i
+      print 'Name: '.yellow
+      stu_name = gets.chomp
+      print 'Has parents permission [Y/N]: '.yellow
+      permission = gets.chomp.downcase
+      parent_permission = permission == 'y'
+      add_student = Student.new(stu_name, stu_age, parent_permission)
+      @persons << {
+        id: add_student.id[0],
+        type: add_student.class,
+        name: add_student.name,
+        age: add_student.age
+      }
+      save_person(@persons)
+    when '2'
+      print 'Age: '.yellow
+      teacher_age = gets.chomp
+      print 'Name: '.yellow
+      teacher_name = gets.chomp
+      print 'Specialization: '.yellow
+      specialization = gets.chomp
+      add_teacher = Teacher.new(teacher_name, teacher_age, specialization)
+      @persons << {
+        id: add_teacher.id[0],
+        type: add_teacher.class,
+        name: add_teacher.name,
+        age: add_teacher.age
+      }
+      save_person(@persons)
     end
-    puts 'Person added successfully'
+    puts 'Person created successfully'.green
   end
 
-  def add_book
-    puts 'Please Add a book'
-    print 'Title :'
-    title = gets.chomp.capitalize
-    print 'Author:'
-    author = gets.chomp.capitalize
-    book_info = Book.new(title, author)
-    book_data_hash = { title: book_info.title, author: book_info.author }
-    book_data = get_data('books')
-    book_data.push(book_data_hash)
-    update_data('books', book_data)
-    puts 'Book added successfully'
+  def create_book
+    print 'Enter book title: '.yellow
+    title = gets.chomp
+    puts
+
+    print 'Enter author name: '.yellow
+    author = gets.chomp
+    puts
+    add_book = Book.new(title, author)
+    @books << { title: add_book.title, author: add_book.author }
+    puts 'Book created successfully'.green
+    save_book(@books)
   end
 
-  def add_rental
-    puts 'Please select abook from the list by number'
-    book.map.with_index { |item, index| puts "#{index} Title: #{item.title}',Auther:#{item.author}" }
-    selected_book = gets.chomp.to_i
-    puts "Choose a person from the list:(
-      DON'T CHOOSE ID PLEASE)"
-    person.map.with_index do |item, index|
-      puts "#{index}, Name: #{item.name} Age: #{item.age},
-          ID:#{item.id}"
-    end
-    selected_person = gets.chomp.to_i
+  def create_rental
+    puts 'Select a book from the following list by number'
+    list_all_books
+    book_number = gets.chomp.to_i
 
-    print 'date?'
-    selecteted_date = gets.chomp
-    puts 'rental_data updated'
-    rental_data_hash = { date: selecteted_date, book_index: selected_book, person_index: selected_person }
-    rental_data = get_data('rental')
-    rental_data.push(rental_data_hash)
-    update_data('rental', rental_data)
+    puts 'Select a person from the following list by number (not id)'
+    list_all_persons
+    person_number = gets.chomp.to_i
+
+    print 'Date: '
+    date = gets.chomp
+    book = Book.new(@books[book_number]['title'], @books[book_number]['author'])
+    person = Person.new(@persons[person_number]['name'], @persons[person_number]['id'])
+    add_rental = Rental.new(date, book, person)
+    arr = []
+    @rentals << {
+      date: add_rental.date,
+      person_id: add_rental.person.id,
+      person_name: add_rental.person.name,
+      title: add_rental.book.title,
+      author: add_rental.book.author,
+      rentals: arr << add_rental.person.rental
+    }
+    puts 'Rental created successfully'.yellow
+    save_rental(@rentals)
   end
 
-  def show_rental
-    print 'Person ID'
-    selected_person_id = gets.chomp.to_i
-    @rental.each do |item|
-      next unless item.person.id.to_i == selected_person_id
+  def list_rentals_for_id
+    @rentals = load_rentals
+    print 'ID of person: '.yellow
+    person_id = gets.chomp.to_i
 
-      puts item.book.title
-      puts item.person.name
-      puts item.date
-    end
-  end
+    @rentals.select do |rental|
+      next unless person_id == rental['person_id']
 
-  def display_all
-    puts 'Welcome to the school library'
-    puts ' Please choose a task  basing on the number '
-    puts "1:  Show all books.
-            2:  Show all people.
-            3: Create a person
-            4: Create a rental
-            5: Create a book
-            6: List rented books to a person by ID
-            7: Exit"
-  end
-
-  def options
-    loop do
-      display_all
-      option = gets.chomp.to_i
-      case option
-      when 1
-        list_books
-        show_books
-      when 2
-        list_people
-        show_people
-      when 3
-        add_people
-      when 4
-        add_rental
-      when 5
-        add_book
-      when 6
-        show_rental
-      else
-        break
-      end
+      print "Date: #{rental['date']}, Book: #{rental['title']} ".cyan
+      print 'by '.cyan
+      puts "#{rental['author']} rented by #{rental['person_name']} ".cyan
     end
   end
 end
