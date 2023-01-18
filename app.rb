@@ -124,13 +124,13 @@ class App
   def display_all
     puts 'Welcome to the school library'
     puts ' Please choose a task  basing on the number '
-    puts "1:  Show all books.
-          2:  Show all people.
-          3: Create a person
-          4: Create a rental
-          5: Create a book
-          6: List rented books to a person by ID
-          7: Exit"
+    puts "1: Show all books.
+2: Show all people.
+3: Create a person
+4: Create a rental
+5: Create a book
+6: List rented books to a person by ID
+7: Exit"
   end
 
   def exit_app
