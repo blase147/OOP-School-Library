@@ -51,7 +51,7 @@ class App
   end
 
   def add_people
-    print('press 1 to add a student or press 2 to add a teacher')
+    puts 'press 1 to add a student or press 2 to add a teacher:'
     person_to_add = gets.chomp.to_i
     puts 'Age: '
     age = gets.chomp.to_i
@@ -76,9 +76,9 @@ class App
 
   def add_book
     puts 'Please Add a book'
-    print 'Title :'
+    puts 'Title :'
     title = gets.chomp.capitalize
-    print 'Author:'
+    puts 'Author:'
     author = gets.chomp.capitalize
     book_info = Book.new(title, author)
     book_data_hash = { title: book_info.title, author: book_info.author }
@@ -89,7 +89,7 @@ class App
   end
 
   def add_rental
-    puts 'Please select abook from the list by number'
+    puts 'Please select a book from the list by number'
     book.map.with_index { |item, index| puts "#{index} Title: #{item.title}',Auther:#{item.author}" }
     selected_book = gets.chomp.to_i
     puts "Choose a person from the list:(
@@ -100,7 +100,7 @@ class App
     end
     selected_person = gets.chomp.to_i
 
-    print 'date?'
+    puts 'date?'
     selecteted_date = gets.chomp
     puts 'rental_data updated'
     rental_data_hash = { date: selecteted_date, book_index: selected_book, person_index: selected_person }
@@ -127,8 +127,8 @@ class App
     puts "1: Show all books.
 2: Show all people.
 3: Create a person
-4: Create a rental
-5: Create a book
+4: Create a book
+5: Create a rental
 6: List rented books to a person by ID
 7: Exit"
   end
@@ -150,9 +150,9 @@ class App
     when 3
       add_people
     when 4
-      add_rental
-    when 5
       add_book
+    when 5
+      add_rental
     when 6
       show_rental
     else
