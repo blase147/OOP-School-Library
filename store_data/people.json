@@ -34,5 +34,17 @@
     "name" : "marcel",
     "age" : 13,
     "class" : "student"
+  },
+  {
+    "id" : 896,
+    "name" : "Mark",
+    "age" : 23,
+    "class" : "student"
+  },
+  {
+    "id" : 357,
+    "name" : "Zubimendi",
+    "age" : 53,
+    "class" : "teacher"
   }
 ]

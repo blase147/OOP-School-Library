@@ -16,6 +16,7 @@ class App
   end
 
   def list_books
+    @book = show_books
     if @book.empty?
       puts 'No books found in library'
     else
@@ -26,6 +27,7 @@ class App
   end
 
   def list_people
+    @person = show_people
     if @person.empty?
       puts 'No person found'
     else
@@ -110,7 +112,8 @@ class App
   end
 
   def show_rental
-    print 'Person ID'
+    @rental = show_rentals(@book, @person)
+    puts 'Person ID'
     selected_person_id = gets.chomp.to_i
     @rental.each do |item|
       next unless item.person.id.to_i == selected_person_id
