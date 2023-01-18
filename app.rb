@@ -90,30 +90,29 @@ class App
 
   def add_rental
     puts 'Please select a book from the list by number'
-    book.map.with_index { |item, index| puts "#{index} Title: #{item.title}',Auther:#{item.author}" }
+    @book.map.with_index { |item, index| puts "#{index} Title: #{item.title}',Auther:#{item.author}" }
     selected_book_id = gets.chomp.to_i
-    selected_book = book[selected_book_id]
-    puts "Choose a person from the list:(
-      DON'T CHOOSE ID PLEASE)"
-    person.map.with_index do |item, index|
+    selected_book = @book[selected_book_id]
+    puts "Choose a person from the list:(DON'T CHOOSE ID PLEASE)"
+    @person.map.with_index do |item, index|
       puts "#{index}, Name: #{item.name} Age: #{item.age}, ID:#{item.id}"
     end
     selected_person_id = gets.chomp.to_i
-    selected_person = person[selected_person_id]
+    selected_person = @person[selected_person_id]
 
     puts 'Date?'
-    selecteted_date = gets.chomp
-    puts 'rental_data updated'
-    @rental << Rental.new(date: selecteted_date, person_index: selected_person, book_index: selected_book)
-    rental_data_hash = { date: selecteted_date, book_index: selected_book, person_index: selected_person }
-    @rental_data.push(rental_data_hash)
+    selected_date = gets.chomp
+    @rental << Rental.new(selected_date, selected_person, selected_book)
+    # rental_data_hash = { date: selected_date, book_index: selected_book, person_index: selected_person }
+    # @rental_data.push(rental_data_hash)
+    puts 'Rental created sucessfully!'
   end
 
   def show_rental
     puts 'Person ID'
     selected_person_id = gets.chomp.to_i
     @rental.each do |item|
-      next unless item.person.id.to_i == selected_person_id
+      next unless item.person.id == selected_person_id
 
       puts item.book.title
       puts item.person.name
