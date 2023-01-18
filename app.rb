@@ -111,12 +111,14 @@ class App
   def show_rental
     puts 'Person ID'
     selected_person_id = gets.chomp.to_i
-    @rental.each do |item|
-      next unless item.person.id == selected_person_id
+    @person.each do |item|
+      next unless item.id == selected_person_id
 
-      puts item.book.title
-      puts item.person.name
-      puts item.date
+      item.rental_data.each do |rental|
+        puts rental.book.title
+        puts rental.person.name
+        puts rental.date
+      end
     end
   end
 

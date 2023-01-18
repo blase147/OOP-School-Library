@@ -52,5 +52,11 @@
     "name" : "Mike",
     "age" : 53,
     "class" : "teacher"
+  },
+  {
+    "id" : 645,
+    "name" : "Paul Sylla",
+    "age" : 65,
+    "class" : "teacher"
   }
 ]
