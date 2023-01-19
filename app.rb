@@ -12,7 +12,7 @@ class App
   def initialize
     @book = show_books
     @person = show_people
-    @rental = show_rentals(@book, @person)
+    @rental = show_rentals
     @student_data = get_data('people')
     @teach_data = get_data('people')
     @book_data = get_data('books')
@@ -42,11 +42,12 @@ class App
   def handle_data(data, people)
     case people
     when 'student'
-      student_data_hash = { id: data.id, name: data.name, age: data.age, class: 'student' }
-      # $student_data = get_data('people')
+      student_data_hash = { id: data.id, name: data.name, age: data.age, parent_permission: true,
+                            class: 'student' }
       @student_data.push(student_data_hash)
     when 'teacher'
-      teacher_data_hash = { id: data.id, name: data.name, age: data.age, class: 'teacher' }
+      teacher_data_hash = { id: data.id, name: data.name, age: data.age, specialization: data.specialization,
+                            class: 'teacher' }
       @teach_data.push(teacher_data_hash)
     end
   end
@@ -64,12 +65,12 @@ class App
       puts 'Do you have parent Permission? [Y/N]: '
       user_response = gets.chomp.capitalize
       user_permission = user_response == 'Y'
-      @person << people_data = Student.new(nil, age, name, parent_permission: user_permission)
+      @person << people_data = Student.new(nil, age, name, parent_permission: user_permission, id: nil)
       handle_data(people_data, 'student')
     when 2
       puts 'Specialisation: '
       specialisation = gets.chomp
-      @person << people_data = Teacher.new(specialisation, age, name)
+      @person << people_data = Teacher.new(specialisation, age, name, id: nil, parent_permission: true)
       handle_data(people_data, 'teacher')
     end
     puts 'Person added successfully'
@@ -103,8 +104,8 @@ class App
     puts 'Date?'
     selected_date = gets.chomp
     @rental << Rental.new(selected_date, selected_person, selected_book)
-    # rental_data_hash = { date: selected_date, book_index: selected_book, person_index: selected_person }
-    # @rental_data.push(rental_data_hash)
+    rental_data_hash = { date: selected_date, book: selected_book, person: selected_person }
+    @rental_data.push(rental_data_hash)
     puts 'Rental created sucessfully!'
   end
 
@@ -134,12 +135,16 @@ class App
 7: Exit"
   end
 
-  def exit_app
-    puts 'I am glad you that you enjoyed the app! Now exiting...'
+  def save_all_data
     update_data('books', @book_data)
     update_data('rental', @rental_data)
-    update_data('people', @student_data)
     update_data('people', @teach_data)
+    update_data('people', @student_data)
+  end
+
+  def exit_app
+    puts 'I am glad you that you enjoyed the app! Now exiting...'
+    save_all_data
     exit
   end
 
