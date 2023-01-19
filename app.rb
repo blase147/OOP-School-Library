@@ -88,6 +88,17 @@ class App
     puts 'Book added successfully'
   end
 
+  def choice(selected_person, date, book)
+    if selected_person.instance_of?(Student)
+      { date: date, book: { title: book.title, author: book.author },
+        person: { id: selected_person.id, name: selected_person.name, age: selected_person.age, class: 'student' } }
+    else
+      { date: date, book: { title: book.title, author: book.author },
+        person: { id: selected_person.id, name: selected_person.name,
+                  age: selected_person.age, specialization: selected_person.specialization, class: 'teahcer' } }
+    end
+  end
+
   def add_rental
     puts 'Please select a book from the list by number'
     @book.map.with_index { |item, index| puts "#{index} Title: #{item.title}',Auther:#{item.author}" }
@@ -103,7 +114,7 @@ class App
     puts 'Date?'
     selected_date = gets.chomp
     @rental << Rental.new(selected_date, selected_person, selected_book)
-    rental_data_hash = { date: selected_date, book: selected_book, person: selected_person }
+    rental_data_hash = choice(selected_person, selected_date, selected_book)
     @rental_data.push(rental_data_hash)
     puts 'Rental created sucessfully!'
   end
@@ -125,24 +136,16 @@ class App
   def display_all
     puts 'Welcome to the school library'
     puts ' Please choose a task  basing on the number '
-    puts "1: Show all books.
-2: Show all people.
-3: Create a person
-4: Create a book
-5: Create a rental
-6: List rented books to a person by ID
-7: Exit"
-  end
-
-  def save_all_data
-    update_data('books', @book_data)
-    update_data('rental', @rental_data)
-    update_data('people', @people_data)
+    puts "1: Show all books. \n2: Show all people. \n3: Create a person
+4: Create a book \n5: Create a rental
+6: List rented books to a person by ID \n7: Exit"
   end
 
   def exit_app
     puts 'I am glad you that you enjoyed the app! Now exiting...'
-    save_all_data
+    update_data('books', @book_data)
+    update_data('rental', @rental_data)
+    update_data('people', @people_data)
     exit
   end
 

@@ -37,12 +37,15 @@ module DataSaver
 
   def show_rentals
     get_data('rental').map do |rental|
-      person = Person.new(id: rental['person']['id'], age: rental['person']['age'], name: rental['person']['name'],
-                          parent_permission: rental['person']['parent_permission'])
-      puts person
-      book = Book.new(title: rental['book']['title'], author: rental['book']['author'])
-      puts book
-      app.Rental.new(date: rental['date'], person: person, book: book)
+      person = if rental['person']['specialization']
+                 Teacher.new(rental['person']['specialization'], rental['person']['age'], rental['person']['name'],
+                             id: rental['person']['id'])
+               else
+                 Student.new(nil, rental['person']['age'], rental['person']['name'],
+                             parent_permission: rental['person']['parent_permission'], id: rental['person']['id'])
+               end
+      book = Book.new(rental['book']['title'], rental['book']['author'])
+      Rental.new(rental['date'], person, book)
     end
   end
 end
