@@ -13,8 +13,7 @@ class App
     @book = show_books
     @person = show_people
     @rental = show_rentals
-    @student_data = get_data('people')
-    @teach_data = get_data('people')
+    @people_data = get_data('people')
     @book_data = get_data('books')
     @rental_data = get_data('rental')
   end
@@ -44,11 +43,11 @@ class App
     when 'student'
       student_data_hash = { id: data.id, name: data.name, age: data.age, parent_permission: true,
                             class: 'student' }
-      @student_data.push(student_data_hash)
+      @people_data.push(student_data_hash)
     when 'teacher'
       teacher_data_hash = { id: data.id, name: data.name, age: data.age, specialization: data.specialization,
                             class: 'teacher' }
-      @teach_data.push(teacher_data_hash)
+      @people_data.push(teacher_data_hash)
     end
   end
 
@@ -138,8 +137,7 @@ class App
   def save_all_data
     update_data('books', @book_data)
     update_data('rental', @rental_data)
-    update_data('people', @teach_data)
-    update_data('people', @student_data)
+    update_data('people', @people_data)
   end
 
   def exit_app

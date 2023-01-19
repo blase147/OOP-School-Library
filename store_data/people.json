@@ -33,5 +33,19 @@
     "age" : 26,
     "parent_permission" : true,
     "class" : "student"
+  },
+  {
+    "id" : 114,
+    "name" : "Neem",
+    "age" : 19,
+    "parent_permission" : true,
+    "class" : "student"
+  },
+  {
+    "id" : 315,
+    "name" : "Kali",
+    "age" : 78,
+    "specialization" : "History",
+    "class" : "teacher"
   }
 ]
