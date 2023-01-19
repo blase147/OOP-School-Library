@@ -1,0 +1,15 @@
+[
+  {
+    "date" : "78/02/09",
+    "book" : {
+      "title" : "Life hacks",
+      "author" : "Frencky"
+    },
+    "person" : {
+      "id" : 114,
+      "name" : "Neem",
+      "age" : 19,
+      "class" : "student"
+    }
+  }
+]

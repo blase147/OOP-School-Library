@@ -2,10 +2,10 @@ require './app'
 class Main
   def main
     app = App.new
-    books = []
-    rental_data = []
-    people = []
-    app.options(books, people, rental_data)
+    loop do
+      app.display_all
+      app.options
+    end
   end
 end
 
