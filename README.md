@@ -112,8 +112,8 @@ To run tests, run the following command:
 
 👤 **Sammuel LEKPOR**
 
-- GitHub: [@githubhandle](https://github.com/Samuellekpor)
-- Twitter: [@twitterhandle](https://twitter.com/samuel_lekpor)
+- GitHub: [@Samuellekpor](https://github.com/Samuellekpor)
+- Twitter: [@samuel_lekpor](https://twitter.com/samuel_lekpor)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/sammuel-lekpor)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
