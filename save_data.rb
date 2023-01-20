@@ -27,18 +27,25 @@ module DataSaver
 
   def show_people
     get_data('people').map do |item|
-      case item['class']
-      when 'student'
-        Student.new(item['age'], item['permission'], item['name'])
-      when 'teacher'
-        Teacher.new(item['age'], item['specialization'], item['name'])
+      if item['class'] == 'teacher'
+        Teacher.new(item['specialization'], item['age'], item['name'], id: item['id'])
       else
-        []
+        Student.new(nil, item['age'], item['name'], parent_permission: item['parent_permission'], id: item['id'])
       end
     end
   end
 
-  def show_rentals(book, people)
-    get_data('rental').map { |item| Rental.new(item['date'], book[item['book_index']], people[item['person_index']]) }
+  def show_rentals
+    get_data('rental').map do |rental|
+      person = if rental['person']['specialization']
+                 Teacher.new(rental['person']['specialization'], rental['person']['age'], rental['person']['name'],
+                             id: rental['person']['id'])
+               else
+                 Student.new(nil, rental['person']['age'], rental['person']['name'],
+                             parent_permission: rental['person']['parent_permission'], id: rental['person']['id'])
+               end
+      book = Book.new(rental['book']['title'], rental['book']['author'])
+      Rental.new(rental['date'], person, book)
+    end
   end
 end

@@ -1,27 +1,15 @@
 [
   {
-    "date" : "2020/12/12",
-    "book_index" : 0,
-    "person_index" : 1
-  },
-  {
-    "date" : "2020/12/12",
-    "book_index" : 0,
-    "person_index" : 0
-  },
-  {
-    "date" : "2020/12/12",
-    "book_index" : 0,
-    "person_index" : 1
-  },
-  {
-    "date" : "2020/12/12",
-    "book_index" : 0,
-    "person_index" : 1
-  },
-  {
-    "date" : "25/12/12",
-    "book_index" : 2,
-    "person_index" : 6
+    "date" : "78/02/09",
+    "book" : {
+      "title" : "Life hacks",
+      "author" : "Frencky"
+    },
+    "person" : {
+      "id" : 114,
+      "name" : "Neem",
+      "age" : 19,
+      "class" : "student"
+    }
   }
 ]

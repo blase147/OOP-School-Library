@@ -1,62 +1,51 @@
 [
   {
-    "id" : 146,
-    "name" : "steve",
-    "age" : 12,
-    "class" : "student"
-  },
-  {
-    "id" : 916,
-    "name" : "steve",
-    "age" : 12,
-    "class" : "student"
-  },
-  {
-    "id" : 600,
-    "name" : "Sam",
-    "age" : 21,
-    "class" : "student"
-  },
-  {
-    "id" : 624,
-    "name" : "Alfred",
-    "age" : 21,
-    "class" : "student"
-  },
-  {
-    "id" : 615,
-    "name" : "neem",
-    "age" : 58,
+    "id" : 841,
+    "name" : "Marcel",
+    "age" : 53,
+    "specialization" : "design",
     "class" : "teacher"
   },
   {
-    "id" : 732,
-    "name" : "marcel",
-    "age" : 13,
-    "class" : "student"
+    "id" : 581,
+    "name" : "Daniel",
+    "age" : 56,
+    "specialization" : "geography",
+    "class" : "teacher"
   },
   {
-    "id" : 896,
-    "name" : "Mark",
+    "id" : 341,
+    "name" : "Tony",
+    "age" : 98,
+    "specialization" : "Farming",
+    "class" : "teacher"
+  },
+  {
+    "id" : 298,
+    "name" : "Felix",
     "age" : 23,
+    "parent_permission" : true,
     "class" : "student"
   },
   {
-    "id" : 357,
-    "name" : "Zubimendi",
-    "age" : 53,
-    "class" : "teacher"
+    "id" : 752,
+    "name" : "Simons",
+    "age" : 26,
+    "parent_permission" : true,
+    "class" : "student"
   },
   {
-    "id" : 944,
-    "name" : "Mike",
-    "age" : 53,
-    "class" : "teacher"
+    "id" : 114,
+    "name" : "Neem",
+    "age" : 19,
+    "parent_permission" : true,
+    "class" : "student"
   },
   {
-    "id" : 645,
-    "name" : "Paul Sylla",
-    "age" : 65,
+    "id" : 315,
+    "name" : "Kali",
+    "age" : 78,
+    "specialization" : "History",
     "class" : "teacher"
   }
 ]
