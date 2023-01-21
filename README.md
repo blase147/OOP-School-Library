@@ -37,6 +37,7 @@ This APP will allow you to: Add new students or teachers. Add new books. Save re
 - **Add new students or teachers**
 - **Add new books**
 - **Save records of who borrowed a given book and when**
+- **Include Unit tests for TDD compliance**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -103,15 +104,16 @@ To run tests, run the following command:
 
 [GitHub](https://github.com/blase147) | [Twitter](https://twitter.com/ChukwumaMosanya) | [LinkedIn](https://www.linkedin.com/in/chukwuma-mosanya)
 
-👤 **Oluwatoyin Abayomi Olaoye**
-- GitHub: [@AbayomiOlaoye](https://github.com/AbayomiOlaoye)
-- Twitter: [@olaoyeelijah](https://twitter.com/olaoyeelijah)
-- LinkedIn: [Oluwatoyin](https://linkedin.com/in/oluwatoyinolaoye)
+👤 **Oluwatoyin Olaoye**
+
+- GitHub: [![Abayomi](https://img.shields.io/badge/-Abayomi-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/abayomiolaoye)
+- Twitter: [![Abayomi](https://img.shields.io/badge/-Abayomi-blue?logo=Twitter&logoColor=skyBlue&style=plastic)](https://twitter.com/olaoyeelijah)
+- LinkedIn: [![Oluwatoyin](https://img.shields.io/badge/-Oluwatoyin-white?logo=LinkedIn&logoColor=181717&style=plastic)](https://linkedin.com/in/oluwatoyinolaoye)
 
 👤 **Sammuel LEKPOR**
 
-- GitHub: [@githubhandle](https://github.com/Samuellekpor)
-- Twitter: [@twitterhandle](https://twitter.com/samuel_lekpor)
+- GitHub: [@Samuellekpor](https://github.com/Samuellekpor)
+- Twitter: [@samuel_lekpor](https://twitter.com/samuel_lekpor)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/sammuel-lekpor)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
