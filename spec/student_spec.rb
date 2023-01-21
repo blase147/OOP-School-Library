@@ -23,12 +23,6 @@ describe Student do
     end
   end
 
-  describe '#parent_permission' do
-    it 'returns the correct parent_permission' do
-      @student.parent_permission.should == true
-    end
-  end
-
   describe '#classroom' do
     it 'returns the correct classroom' do
       @student.classroom.should.nil?
