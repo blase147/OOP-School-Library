@@ -47,5 +47,12 @@
     "age" : 78,
     "specialization" : "History",
     "class" : "teacher"
+  },
+  {
+    "id" : 998,
+    "name" : "Lucas",
+    "age" : 15,
+    "parent_permission" : true,
+    "class" : "student"
   }
 ]
